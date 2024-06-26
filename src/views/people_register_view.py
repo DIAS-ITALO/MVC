@@ -15,3 +15,13 @@ class PeopleRegisterView:
         }
         
         return new_person_informations
+    
+    def registry_person_sucess(self, message: Dict) -> None:
+        os.system('cls||clear')
+        
+        sucess_message = f'''
+            Usuário cadastrado com sucesso
+           
+            Tipo: {message["type"]}
+            Registros: {message["count"]} 
+        '''
