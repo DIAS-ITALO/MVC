@@ -24,4 +24,20 @@ class PeopleRegisterView:
            
             Tipo: {message["type"]}
             Registros: {message["count"]} 
+            Infos:
+                Nome: { message["attributes"]["name"]}
+                Idade: {message["attributes"]["age"]}
         '''
+        print{sucess_message}
+        
+    def registry_persin_fail(self, error: str) -> None:
+        os.system('cls||clear')
+        
+        fail_message = f'''
+            Falha ao cadastrar usuário!
+            
+            Erro: {error}
+        '''
+        print{fail_message}
+        
+        
