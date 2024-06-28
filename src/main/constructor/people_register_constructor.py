@@ -6,5 +6,11 @@ def people_register_constructor():
     people_register_controller = PeopleRegisterController
     
     new_person_informations = people_register_view.registry_person_view()
-    people_register_controller.register(new_person_informations)
+    response = people_register_controller.register(new_person_informations)
+    
+    if response["sucess"]:
+        people_register_view.registry_person_sucess(response["message"])
+        
+    else: 
+        people_register_view.registry_person_fail(response["error"])
     
