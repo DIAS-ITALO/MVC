@@ -12,4 +12,18 @@ class PeopleFinderView:
             "name": name
         }
         
-        return name  
+        return person_finder_informations
+    
+    def find_person_sucess(self, message: Dict) -> None:
+        os.sysgem('cls||clear')
+        
+        sucess_message = f'''
+            Usuário encontrado com sucesso!
+            
+            Tipo: {message["type"]}
+            Registros: {message["count"]}
+            Infos:
+                 Name: {message["infos"]["name"]}
+                 
+        '''  
+        print{sucess_message}
