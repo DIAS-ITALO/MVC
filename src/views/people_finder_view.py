@@ -27,3 +27,13 @@ class PeopleFinderView:
                  
         '''  
         print{sucess_message}
+        
+    def find_person_fall(self, error: str) -> None:
+        os.system('cls||clear')
+        
+        fail_message = f'''
+            Falha ao encontrar o usuário!
+            
+            Erro: {error}
+        '''
+        print{fail_message}
