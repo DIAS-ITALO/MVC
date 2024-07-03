@@ -1,5 +1,6 @@
 from typing import Dict  
-
+from src.models.repository.person_repository import person_repository
+from src.models.entities.person import Person
 class PeopleRegisterController:
     def register(selg, new_person_informations: Dict) -> Dict:
         try: 
@@ -19,6 +20,14 @@ class PeopleRegisterController:
         
         try: int(new_person_informations["height"])
         except: raise Exception('Campo Altura Incorreto!')
+        
+    def __create_person_entity_and_store(self, new_person_informations: Dict):
+        name = new_person_informations["name"]
+        age = new_person_informations["age"]
+        height = new_person_informations["height"]
+        
+        new_person = Person(name, age, height)
+        person_repository.registry_person(new_person)
         
     def __format_response(self, new_person_informations: Dict) -> Dict:
         return {

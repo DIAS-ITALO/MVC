@@ -30,7 +30,9 @@ class PeopleFinderController:
             "count": 1,
             "type": "Person",
             "infos": {
-                "name": "meu nome teste"
+                "name": person.name,
+                "age": person.age,
+                "height": person.height
             }
         }
         
