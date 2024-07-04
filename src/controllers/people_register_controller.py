@@ -5,7 +5,7 @@ class PeopleRegisterController:
     def register(selg, new_person_informations: Dict) -> Dict:
         try: 
             self.__validate_fields(new_person_informations)
-            #enviar para models para cadastro de dados
+            self.__create_person_enity_and_store(new_person_informations)
             response = self.__format_response(new_person_informations)
             return {"success": True, "message": response }
         except Exception as exception:
@@ -21,7 +21,7 @@ class PeopleRegisterController:
         try: int(new_person_informations["height"])
         except: raise Exception('Campo Altura Incorreto!')
         
-    def __create_person_entity_and_store(self, new_person_informations: Dict):
+    def __create_person_entity_and_store(self, new_person_informations: Dict) -> None:
         name = new_person_informations["name"]
         age = new_person_informations["age"]
         height = new_person_informations["height"]
